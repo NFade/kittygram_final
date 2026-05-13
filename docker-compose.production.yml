@@ -12,7 +12,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: faderz/kittygram_backend
     env_file: .env
     volumes:
       - static:/app/static/
@@ -24,13 +24,13 @@ services:
              python manage.py collectstatic --no-input &&
              gunicorn --bind 0.0.0.0:8000 kittygram_backend.wsgi"
   frontend:
+    image: faderz/kittygram_frontend
     env_file: .env
-    build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
-    build: ./nginx/
+    image: faderz/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
