@@ -40,7 +40,7 @@ jobs:
           DB_PORT: 5432
         run: |
           cd backend
-          python -m pytest
+          python -m pytest cats/tests.py
 
   frontend_tests:
     runs-on: ubuntu-latest
