@@ -1,4 +1,4 @@
 repo_owner: NFade
-kittygram_domain: your-server-ip-or-domain
-taski_domain: your-taski-domain
+kittygram_domain: https://github.com/NFade/kittygram_final
+taski_domain: https://github.com/NFade/taski-docker
 dockerhub_username: faderz
